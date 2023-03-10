@@ -194,3 +194,5 @@ INSERT INTO pais (id, nombre) VALUES('YE', 'Yemen');
 INSERT INTO pais (id, nombre) VALUES('ZM', 'Zambia');
 INSERT INTO pais (id, nombre) VALUES('ZW', 'Zimbabwe');
 
+INSERT INTO persona (nombres, apellidos, idPais) VALUES('Julio', 'Galeano', 'PY');
+INSERT INTO persona (nombres, apellidos, idPais) VALUES('Cesar', 'Alvarez', 'MX');

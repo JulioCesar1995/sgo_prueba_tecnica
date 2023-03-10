@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>POC SGO</title>
+
+        <script type="text/javascript" th:src="@{/jquery-3.6.3.min.js}"></script>
+        <script type="text/javascript" th:src="@{/personas/app.bundle.js}" defer></script>
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div class="modal fade" id="modalMessage" tabindex="-1" role="dialog" aria-labelledby="modalMessage" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalMessageTitle">Atenci&oacute;n</h5>
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" id="modalMessageContent">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Aceptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="modalAgregarEditarPersona" tabindex="-1" aria-labelledby="modalAgregarEditarPersonaLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalAgregarEditarPersonaLabel"></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="updateUser">
+                                <input type="hidden" name="idPersona" id="idPersona">
+                                <input type="hidden" name="accionPersona" id="accionPersona">
+                                <div class="mb-3 row">
+                                    <label for="nombresPersona" class="col-md-3 form-label">Nombres</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" id="nombresPersona" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="apellidosPersona" class="col-md-3 form-label">Apellidos</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" id="apellidosPersona" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="paisPersona" class="col-md-3 form-label">Pais</label>
+                                    <div class="col-md-9">
+                                        <select id="paisPersona" class="form-select">
+                                            <option disabled>Seleccione un Pais</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="btnGuardar" onclick="globalThis.app.editarAgregarPersona($('#accionPersona').val(), $('#idPersona').val())"
+                                    type="button" class="btn btn-primary">Guardar</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h5 class="card-header">Personas</h5>
+                <button id="btnAgregar" onclick="globalThis.app.mostrarModalAgregarPersona()" type="button" class="btn btn-primary" style="margin: 10px 0;">Agregar</button>
+                <div class="card-body">
+                    <table id="tablePersonas" class="display">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nombres</th>
+                                <th>Apellidos</th>
+                                <th>Pais</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        const config = { context: ""};
+    </script>
+
+</html>

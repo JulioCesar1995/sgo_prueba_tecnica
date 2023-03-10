@@ -11,4 +11,7 @@ public interface PaisDAO {
 
     @Select("select * from pais")
     List<Pais> obtenerPaises();
+
+    @Select("select * from pais where id = #{id}")
+    List<Pais> obtenerPaiseFromID(String id);
 }

@@ -8,6 +8,7 @@ module.exports = {
     },
     entry: {
     paises: './src/main/webapp/resources/src/paises/App.js',
+    personas: './src/main/webapp/resources/src/personas/App.js',
     },
     output: {
         path: path.resolve(__dirname, 'src', 'main', 'resources', 'static'),
